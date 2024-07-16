@@ -105,6 +105,8 @@ check() {
 }
 
 package() {
+    conflicts=(gnome-settings-daemon)
+    provides=(gnome-settings-daemon=1:$pkgver)
     meson install -C build --destdir "$pkgdir"
 }
 
